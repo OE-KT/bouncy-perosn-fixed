@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlb5457518ov1"
+path="res://.godot/imported/RubberClicks9 (1).wav-8728fb0be7e5618f916cee18f2f892d9.sample"
+
+[deps]
+
+source_file="res://RubberClicks9 (1).wav"
+dest_files=["res://.godot/imported/RubberClicks9 (1).wav-8728fb0be7e5618f916cee18f2f892d9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

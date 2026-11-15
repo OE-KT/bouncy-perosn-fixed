@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://babs8osn6p0mt"]
+
+[ext_resource type="Script" uid="uid://dcqhej2vj8n4q" path="res://button.gd" id="1_n4tde"]
+[ext_resource type="Texture2D" uid="uid://de0wmbkyc0xrh" path="res://ButtonNormal.png" id="2_n4tde"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqmrj"]
+size = Vector2(350, 57)
+
+[node name="Button" type="Area2D" unique_id=1789264696]
+scale = Vector2(0.9387397, 1.513563)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_n4tde")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1034049196]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_kqmrj")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=335030976]
+texture_filter = 1
+position = Vector2(-1.065258, -1.9820781)
+scale = Vector2(1.566179, 1.0637178)
+texture = ExtResource("2_n4tde")
+
+[node name="Auido" type="AudioStreamPlayer2D" parent="." unique_id=119413887]

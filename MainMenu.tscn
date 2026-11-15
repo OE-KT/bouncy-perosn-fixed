@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cvfstqc1x01s3"]
+
+[ext_resource type="Script" uid="uid://cmqw62rhfbxc" path="res://main_menu.gd" id="1_eiy7p"]
+[ext_resource type="Texture2D" uid="uid://cxdnc8p7oh0lr" path="res://CircleManAir.png" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://y7ewqmkscmhc" path="res://Background.png" id="2_h7a2f"]
+[ext_resource type="Texture2D" uid="uid://bityuik4dny6x" path="res://Clouds.png" id="3_qoqlk"]
+[ext_resource type="AudioStream" uid="uid://86q5be87sde2" path="res://TitleScreenBouncingBob.mp3" id="5_iwfq2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iwfq2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.19434926, 0.19434929, 0.19434911, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7r1g0"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Node2D" unique_id=655089171]
+script = ExtResource("1_eiy7p")
+
+[node name="MainMenuUI" type="CanvasLayer" parent="." unique_id=1810890521]
+
+[node name="UI" type="Control" parent="MainMenuUI" unique_id=946417238]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="MainMenuUI/UI" unique_id=727449027]
+position = Vector2(586, 314)
+texture = ExtResource("2_h7a2f")
+
+[node name="Clouds" type="Sprite2D" parent="MainMenuUI/UI" unique_id=148894483]
+position = Vector2(512, 325)
+texture = ExtResource("3_qoqlk")
+
+[node name="Bob" type="Sprite2D" parent="MainMenuUI/UI" unique_id=28530146]
+texture_filter = 1
+position = Vector2(591.99994, 302)
+rotation = 0.5788229
+scale = Vector2(1.9374989, 1.9374989)
+texture = ExtResource("1_i26rj")
+
+[node name="StartButton" type="Button" parent="MainMenuUI/UI" unique_id=1454726826]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -169.5
+offset_top = -116.0
+offset_right = 169.5
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 74
+theme_override_styles/normal = SubResource("StyleBoxFlat_iwfq2")
+text = "Start "
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenuUI/UI" unique_id=1272041995]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -414.0
+offset_top = 39.0
+offset_right = 416.0
+offset_bottom = 190.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 110
+theme_override_styles/normal = SubResource("StyleBoxFlat_7r1g0")
+text = "Bouncing Bob!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1851799672]
+stream = ExtResource("5_iwfq2")
+autoplay = true
+
+[connection signal="pressed" from="MainMenuUI/UI/StartButton" to="." method="_on_start_button_pressed"]
